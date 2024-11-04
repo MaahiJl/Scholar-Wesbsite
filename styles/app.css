@@ -1,0 +1,878 @@
+:root {
+    --main-color:rgb(122, 106, 216);
+    --secondary:#f1f0fe;
+    --white:#fff;
+    --main-transparent: rgba(122, 106, 216, 0.95);
+    --text:rgb(74, 74, 74);
+    --services:#f1f0fe;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+body{
+    line-height: 1.6;
+    font-size: 1.6rem;
+    font-family: "POPPINS REGULAR";
+    background: var(--white);
+}
+body::selection {
+    background: rgba(63, 45, 33, 0.95);
+}
+/*
+======***======
+ Helper Classes
+======***======
+*/
+.h-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button {
+    width: 12rem;
+    height: 3.5rem;
+    font-size: 1.4rem;
+    color: var(--main-color);
+    background-color: var(--white);
+    border: none;
+    border-radius: 10rem;
+    -webkit-border-radius: 10rem;
+    -moz-border-radius: 10rem;
+    -ms-border-radius: 10rem;
+    -o-border-radius: 10rem;
+    transition: all 150ms ease-in;
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -ms-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+}
+/*
+======***======
+   app styles
+======***======
+*/
+/*
+========***=========
+   Navigation Bar
+========***=========
+*/
+header{
+    background-image: url("/images/banner-bg.jpg");
+    background-size: cover;
+    background-position: center bottom;
+    width: 100%;
+    height: 90rem;
+}
+.header-container {
+    width: 100%;
+}
+.nav-container {
+    /* position: sticky; */
+    width: 100%;
+    height: 9rem;
+    padding-top: 5rem;
+    background-color: transparent;
+    border-bottom-left-radius: 2.5rem;
+    border-bottom-right-radius: 2.5rem;
+}
+.container {
+    width: 140rem;
+    padding: 0 4rem 0 4rem;
+    margin: 0 auto;
+}
+.nav {
+    margin-bottom: 1rem ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-sec {
+    display: flex;
+    align-items: center;
+}
+.searching {
+    position: relative;
+}
+.searching span {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+}
+.logo {
+    width: 18rem;
+    height: 4.3rem;
+    padding-right: 20px;
+    font-family: "POPPINS BOLD";
+    font-size: 3.5rem;
+    color: var(--white);
+    border-right: 1px solid rgba(192, 192, 192, 0.564);
+}
+.searching {
+
+}
+.search {
+    outline-style: none;
+    width: 24rem;
+    height: 4.5rem;
+    margin-left: 2.2rem;
+    padding: 2rem 4rem 2rem 2rem;
+    color: var(--white);
+    font-size: 1.7rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 5rem;
+}
+.search::placeholder {
+    color: #ecececd9;
+    font-family: "POPPINS EXTRA LIGHT";
+    font-size: 1.5rem;
+}
+.search:focus {
+    border-inline: none;
+}
+.search-icon {
+    width: 2rem;
+    height: 2rem;
+}
+.menu-sec {
+}
+.menu {
+    display: flex;
+    align-items: center;
+}
+.menu__item {
+    color: white;
+    margin-left: 4.5rem;
+    font-family: "POPPINS EXTRA LIGHT";
+    font-size: 1.5rem;
+    transition: all 150ms ease-in;
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -ms-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+}
+.menu__item:hover {
+    color: rgba(255, 255, 255, 0.6);
+}
+.menu__item:last-child {
+    margin-left: 2.2rem;
+    height: 4rem;
+    width: 13rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5rem;
+}
+.nav__toggle-icon {
+    display: none;
+    width: 2.5rem;
+    /* height: 5rem; */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav__toggle-line {
+    position: relative;
+    transition: all 100ms ease-in;
+}
+
+.nav__toggle-line {
+    width: 2.5rem;
+    height: 0.4rem;
+    content: " ";
+    background-color: var(--white);
+    border-radius: 2rem;
+
+}
+
+.nav__toggle-line::before {
+    content: " ";
+    background-color: var(--white);
+    border-radius: 2rem;
+    width: 3.5rem;
+    height: 0.4rem;
+    position: absolute;
+    top: 1rem;
+    left: -1rem;
+    transition: all 150ms ease-in;
+}
+
+.nav__toggle-line::after {
+    content: " ";
+    background-color: var(--white);
+    border-radius: 2rem;
+    width: 3.5rem;
+    height: 0.4rem;
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    transition: all 150ms ease-in;
+}
+/*
+========***=========
+      Banners
+========***=========
+*/
+.arrow-right,
+.arrow-left {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+    font-size: 5rem;
+    font-style: normal;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10rem;
+    -webkit-border-radius: 10rem;
+    -moz-border-radius: 10rem;
+    -ms-border-radius: 10rem;
+    -o-border-radius: 10rem;
+}
+.arrow-left{
+    margin-bottom: 7rem;
+    position: absolute;
+    top: 53rem;
+    left: 2rem;
+
+}
+.arrow-right{
+    position: absolute;
+    top: 60rem;
+    left: 2rem;
+
+}
+.arrow-svg {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.courses {
+    position: relative;
+    width: 100%;
+}
+.course {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    right: 0;
+    background-image: url("/images/banner-item-01.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 115rem;
+    height: 65rem;
+    margin-top: 7rem;
+    border-radius: 3rem;
+    padding: 10rem 10rem;
+    color: var(--white);
+}
+.floating1 {
+    height: 3.1rem;
+}
+.floating1-container {
+    width: 100%;
+}
+.course__title {
+    width: 70rem;
+    font-family: "POPPINS EXTRA BOLD";
+    font-size: 4.5rem;
+    margin: 4rem 0;
+
+}
+.course__description {
+    width: 70rem;
+    font-family: "POPPINS LIGHT";
+    font-size: 1.5rem;
+    margin-bottom: 5rem;
+}
+.course__request {
+    display: flex;
+    align-items: center;
+}
+.floating2 {
+    width: 15rem;
+    height: 4.5rem;
+    font-weight: 700;
+    background-color: var(--white);
+    color: var(--main-color);
+    margin-right: 3rem;
+}
+.floating3 {
+    inset: 0;
+    margin: auto;
+    background-color: var(--white);
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-right: 2rem;
+}
+.span-container {
+    
+}
+.request__question {
+
+}
+/*
+========***=========
+      Services
+========***=========
+*/
+.services {
+    margin-top: 15rem;
+}
+.service {
+    position: relative;
+}
+.first-service {
+}
+.second-srvice {
+    padding-left: 2rem;
+}
+.third-service {
+    padding-left: 4rem;
+}
+.service__shape {
+    position: absolute;
+    top: -7rem;
+    left: 23rem;
+    width: 17rem;
+    height: 17rem;
+    background-color: var(--main-color);
+    border-radius: 100rem;
+    -webkit-border-radius: 100rem;
+    -moz-border-radius: 100rem;
+    -ms-border-radius: 100rem;
+    -o-border-radius: 100rem;
+}
+.cervice__svg {
+    width: 13rem;
+    height: 17rem;
+    transition: all 150ms ease-in;
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -ms-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+}
+.cervice__svg:hover {
+    height: 15rem;
+}
+.service__text {
+    text-align: left;
+    width: 33rem;
+    height: 32rem;
+    padding: 7rem 2.5rem 4rem 3rem;
+    background-color: var(--services);
+    border-radius: 3rem;
+    -webkit-border-radius: 3rem;
+    -moz-border-radius: 3rem;
+    -ms-border-radius: 3rem;
+    -o-border-radius: 3rem;
+}
+.service__title {
+    margin-bottom: 2rem;
+    font-family: "POPPINS MEDIUM";
+    font-size: 2rem;
+    color: #1e1e1e;
+}
+.cervice__description {
+    height: 10rem;
+    margin-bottom: 2rem;
+    font-family: "POPPINS REGULAR";
+    font-size: 1.5rem;
+    color: #4a4a4a;
+}
+.service__button {
+    width: 12rem;
+    height: 3.5rem;
+    font-size: 1.5rem;
+    color: var(--main-color);
+    background-color: var(--white);
+    border: none;
+    border-radius: 10rem;
+    -webkit-border-radius: 10rem;
+    -moz-border-radius: 10rem;
+    -ms-border-radius: 10rem;
+    -o-border-radius: 10rem;
+    transition: all 150ms ease-in;
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -ms-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+}
+.service__button:hover{
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+/* Questions */
+
+.details {
+    position: relative;
+    margin-top: 10rem;
+}
+.middle-grab {
+    display: flex;
+    align-items: center;
+    height: 34rem !important;
+}
+.floating4 {
+    position: absolute;
+    right: 0;
+    top: 4rem;
+    width: 161rem;
+    height: 40rem;
+    background-color: #f1f0fe;
+    border-top-left-radius: 100rem;
+    border-bottom-left-radius: 100rem;
+    z-index: -100;
+}
+.questions {
+    width: 60rem;
+    height: 48rem;
+    margin-left: 10rem;
+    padding: 7rem 6rem;
+    background-color: var(--main-color);
+    border-radius: 4rem;
+}
+.question {
+    width: 100%;
+    height: 5rem;
+    line-height: 5rem;
+    padding: 0 2rem;
+    font-family: "POPPINS MEDIUM";
+    background-color: var(--white);
+    border-radius: 3rem;
+}
+.question__description {
+    display: none;
+}
+.about-us {
+    width: 45rem;
+}
+.about-us h6 {
+    margin-bottom: 1rem;
+    color: var(--main-color);
+    font-family: "POPPINS MEDIUM";
+    font-size: 1.4rem;
+}
+.about-us h2 {
+    margin-bottom: 2rem;
+    color: #1e1e1e;
+    font-family: "POPPINS BOLD";
+    font-size: 3.5rem;
+    line-height: 4.5rem;
+}
+.about-us p {
+    margin-bottom: 3rem;
+    font-family: "POPPINS LIGHT";
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+    color: #4E4E4E;
+}
+.details__button {
+    width: 13rem;
+    font-family: "POPPINS MEDIUM";
+    font-size: 1.4rem;
+}
+/* ================================================================= */
+
+@media (max-width:1400px) {
+    .container {
+        width: 115rem;
+    }
+    header{
+        height: 100rem;
+    }
+    .course{
+        width: 95rem;
+        height: 75rem;
+    }
+    .course__title{
+        width: 45rem;
+    }
+    .course__description{
+        width: 47rem;
+    }
+    .service__shape {
+        top: -6rem;
+        left: 24rem;
+        width: 13rem;
+        height: 13rem;
+    }
+    .service__text {
+        width: 30rem;
+        height: 29rem;
+        padding: 5rem 2.5rem 4rem 3rem;
+    }
+    .cervice__svg {
+        width: 11rem;
+        height: 13rem;
+    }
+    .cervice__svg:hover {
+        height: 11rem;
+    }
+    .floating4 {
+        width: 110rem;
+    }
+    .questions {
+        width: 55rem;
+    }
+    .about-us {
+        margin-left: 18rem;
+    }
+    .about-us p {
+        margin-bottom: 2rem;
+    }
+    .about-us h2 {
+        margin-bottom: 1rem;
+    }
+}
+@media (max-width:1200px) {
+    .container {
+        width: 100rem;
+    }
+    .menu__item {
+        color: white;
+        margin-left: 2.5rem;
+    }
+    .course{
+        width: 80rem;
+        height: 75rem;
+    }
+    .search{
+        width: 20rem;
+    }
+    .menu__item:last-child {
+        margin-left: 1rem;
+        width: 11rem;
+    }
+    .service__shape {
+        top: -6rem;
+        left: 17.5rem;
+        width: 13rem;
+        height: 13rem;
+    }
+    .service__text {
+        width: 22rem;
+        height: 36rem;
+        padding: 4.5rem 3rem 4rem 3rem;
+        line-height: 3rem;
+    }
+    .cervice__svg {
+        width: 10rem;
+        height: 13rem;
+    }
+    .cervice__svg:hover {
+        height: 11rem;
+    }
+    .cervice__description {
+        height: 17.5rem;
+    }
+    .third-service,
+    .second-srvice {
+        padding: 0;
+    }
+    .floating4 {
+        width: 93rem;
+    }
+    .questions {
+        width: 43rem;
+    }
+    .about-us {
+        margin-left: 12rem;
+    }
+    .about-us p {
+        margin-bottom: 2rem;
+    }
+    .about-us h2 {
+        margin-bottom: 1rem;
+    }
+}
+@media (max-width:992px) {
+    .container{
+        width: 80rem;
+    }
+    .searching {
+        display: none;
+    }
+    .course {
+        width: 72.5rem;
+        height: 72rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin-top: 3rem;
+    }
+    .course__title {
+        width: 100%;
+        font-size: 4.1rem;
+    }
+    .course__description {
+        width: 100%;
+    }
+    .course__request {
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .floating2{
+        margin: 0;
+    }
+    .arrow-left,
+    .arrow-right {
+        display: none;
+    }
+    .floating1-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .course__request{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    .service__shape {
+        top: -5rem;
+        left: 21rem;
+        width: 13rem;
+        height: 13rem;
+    }
+    .service__text {
+        width: 29rem;
+        height: 30rem;
+        padding: 5rem 2.5rem 4rem 3rem;
+    }
+    .cervice__svg {
+        width: 11rem;
+        height: 13rem;
+    }
+    .cervice__svg:hover {
+        height: 11rem;
+    }
+    .cervice__description {
+        height: 12rem;
+    }
+    .second-srvice {
+        padding-left: 2rem;
+    }
+    .details {
+        margin-top: 5rem;
+    }
+    .floating4 {
+        width: 100%;
+        height: 32rem;
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+    }
+    .questions {
+        width: 58rem;
+        height: 40rem;
+        margin: 0 7rem;
+        padding: 5rem 6rem
+    }
+    .about-us {
+        width: 58rem;
+        margin: 6rem 0 0 0;
+    }
+    .about-us p {
+        margin-bottom: 2rem;
+    }
+    .about-us h2 {
+        margin-bottom: 1rem;
+    }
+    .middle-grab {
+        height: 30rem !important;
+    }
+    .details__button {
+        color: var(--white);
+        background-color: var(--main-color);
+    }
+}
+@media (max-width:768px) {
+    .container {
+        width: 60rem;
+    }
+    .course {
+        width: 52rem;
+        height: 70rem;
+        padding: 4rem 4rem;
+    }
+    .course__title {
+        font-size: 3.6rem;
+    }
+    .logo {
+        border: none;
+    }
+    .menu-sec {
+        display: none;
+    }
+    .nav__toggle-icon {
+        display: block;
+    }
+    .service__text {
+        width: 29rem;
+        height: 30rem;
+        padding: 5rem 2.5rem 4rem 3rem;
+    }
+    .second-srvice {
+        padding: 0;
+        direction: rtl;
+    }
+    .col-md-12 {
+    width: 100%;
+    flex: 0 0 auto;
+    margin-bottom: 8rem;
+    }
+    .service__text {
+        width: 40rem;
+        height: 27rem;
+        padding: 5rem 2.5rem 4rem 3rem;
+    }
+    .service__shape {
+        top: -4rem;
+        left: 32rem;
+    }
+    .sm-change {
+        left: 7rem; 
+    }
+    .sm-text-change {
+        padding: 5rem 2.5rem 4rem 8rem;
+    }
+    .cervice__description {
+        height: 9rem;
+    }
+    .floating4 {
+        display: none;
+    }
+    .questions {
+        width: 100%;
+        margin: 6rem 0 0 0;
+    }
+}
+
+@media (max-width:576px) {
+    .container {
+        width: 100%;
+        margin: 0;
+        padding: 0 3rem;
+    }
+    .course {
+        width: 100%;
+    }
+    .course__title {
+        margin: 2.5rem 0;
+    }
+    .course__description {
+        margin-bottom: 2.5rem;
+    }
+    .course__request {
+        gap: 4rem;
+    }
+    .floating1 {
+        margin-bottom: 2rem;
+    }
+    .service__shape {
+        top: -6rem;
+        left: 32rem;
+    }
+    .service__text {
+        width: 100%;
+        height: 30rem;
+        padding: 5rem 2.5rem 4rem 3rem;
+    }
+    .second-srvice {
+        direction: ltr;
+    }
+    .cervice__description {
+        height: 10rem;
+    }
+    .questions {
+        padding: 5rem 3rem;
+    }
+    .about-us {
+        margin: 6rem 3rem 0 0;
+    }
+}
+@media (max-width:500px) {
+    .service__shape {
+    display: none;
+    }
+    .col-md-12 {
+        margin-bottom: 4rem;
+    }
+}
+@media (max-width:400px) {
+    .course {
+        padding: 4rem 1rem 3rem 1rem;
+        }
+    .course__title {
+        margin: 2.5rem 0;
+        
+    }
+    .course__description {
+        margin-bottom: 3rem;
+    }
+    .course__request {
+        gap: 4rem;
+    }
+    .floating1 {
+        margin-bottom: 2rem;
+    }
+    .cervice__description {
+        height: 11rem;
+    }
+    .col-md-12 {
+        margin-bottom: 3rem;
+    }
+    .question {
+        height: 7rem;
+        line-height: 2.5rem;
+        padding: 1rem 2rem;
+    }
+    .middle-grab {
+        height: 36rem !important;
+    }
+    .questions {
+        height: 46rem;
+    }
+}
+@media (max-width:300px) {
+    .course {
+        height: 75rem;
+    }
+    .course__title {
+        margin: 0 0 2.5rem 0;  
+    }
+    .course__request {
+        gap: 2rem;
+    }
+    .service__text {
+        height: 37rem;
+        padding: 3rem 2.5rem 4rem 3rem;
+    }
+    .cervice__description {
+        height: 17rem;
+    }
+    .question {
+        height: 10rem;
+        line-height: 2rem;
+        padding: 1rem 1rem;
+    }
+    .questions {
+        height: 57rem;
+    }
+    .middle-grab {
+        height: 47rem !important;
+    }
+}
